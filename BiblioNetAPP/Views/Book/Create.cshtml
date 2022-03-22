@@ -1,6 +1,9 @@
-﻿@model Book
+﻿@model Books
 @{
     ViewData["Title"] = "Create book";
+}
+@{
+    <partial name="_ValidationScriptsPartial"/>
 }
 
 <h1>Save a book</h1>
@@ -12,11 +15,15 @@
         <input type="text" asp-for="BookName" class="form-control" autofocus />
         <span asp-validation-for="BookName" class="text-danger"></span>
     </div>
-    <div class="mb-3">
+    @{
+    /*
+     <div class="mb-3">
         <label asp-for="Author" class="form-label"></label>
         <input type="text" asp-for="Author" class="form-control" />
         <span asp-validation-for="Author" class="text-danger"></span>
     </div>
+    */
+    }
     <div class="mb-3">
         <label asp-for="Price" class="form-label"></label>
         <input type="number" asp-for="Price" class="form-control" />

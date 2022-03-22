@@ -1,13 +1,15 @@
-﻿using System.ComponentModel.DataAnnotations;
+﻿using BiblioNetAPP.Validations;
+using System.ComponentModel.DataAnnotations;
 
 namespace BiblioNetAPP.Models
 {
-    public class Book
+    public class Books
     {
         public int Id { set; get; }
         [Required(ErrorMessage="{0} is required")]
+        [FirstUpperCase]
         public string BookName { set; get; }
-        public string Author { set; get; }
+        public int AuthorId { set; get; }
         public float Price { set; get; }
     }
 }
